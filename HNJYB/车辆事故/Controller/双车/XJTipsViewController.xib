@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XJTipsViewController">
+            <connections>
+                <outlet property="tipLab" destination="4RV-A7-aqY" id="3Iy-Bs-q1b"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的现场拍照信息已经通过审核！\n请快速将车辆移至不影响交通的安全地点！\n引起交通拥堵可能会受到处罚！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RV-A7-aqY">
+                    <rect key="frame" x="20" y="335" width="280" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="GNO-Cv-yEp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IP026" translatesAutoresizingMaskIntoConstraints="NO" id="Thk-9g-6sz">
+                    <rect key="frame" x="20" y="40" width="280" height="259"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="259" id="U9x-uZ-44O"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDo-cc-SHS">
+                    <rect key="frame" x="15" y="413" width="290" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="0Zc-0o-Go3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="已挪车" backgroundImage="blue">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="carMoved:" destination="-1" eventType="touchUpInside" id="u0d-TB-wqy"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4RV-A7-aqY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6qt-kQ-6cd"/>
+                <constraint firstItem="4RV-A7-aqY" firstAttribute="leading" secondItem="Thk-9g-6sz" secondAttribute="leading" id="FwH-cl-pJM"/>
+                <constraint firstItem="4RV-A7-aqY" firstAttribute="centerX" secondItem="mDo-cc-SHS" secondAttribute="centerX" id="GO4-X3-fQZ"/>
+                <constraint firstItem="mDo-cc-SHS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="IF9-nr-Z0K"/>
+                <constraint firstItem="Thk-9g-6sz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="N9W-Kw-lsW"/>
+                <constraint firstItem="mDo-cc-SHS" firstAttribute="top" secondItem="4RV-A7-aqY" secondAttribute="bottom" constant="18" id="VzY-nA-HE5"/>
+                <constraint firstItem="Thk-9g-6sz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="XZc-aC-c8v"/>
+                <constraint firstItem="Thk-9g-6sz" firstAttribute="trailing" secondItem="4RV-A7-aqY" secondAttribute="trailing" id="hIo-Oc-Mu3"/>
+                <constraint firstItem="4RV-A7-aqY" firstAttribute="top" secondItem="Thk-9g-6sz" secondAttribute="bottom" constant="36" id="jWq-Xu-hia"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="435" y="328"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="IP026" width="258" height="291"/>
+        <image name="blue" width="52" height="88"/>
+    </resources>
+</document>
