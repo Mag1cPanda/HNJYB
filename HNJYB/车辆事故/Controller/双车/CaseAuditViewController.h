@@ -6,8 +6,10 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "PublicViewController.h"
+#import "CaseBaseViewController.h"
 
-@interface CaseAuditViewController : PublicViewController
+@interface CaseAuditViewController : CaseBaseViewController
+
+@property (nonatomic, assign) NSInteger photoCount;
 
 @end

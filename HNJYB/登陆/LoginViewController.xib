@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
@@ -19,9 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号/用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MWH-8j-bMR" customClass="HNTextField">
-                    <rect key="frame" x="10" y="188" width="300" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MWH-8j-bMR" customClass="HNTextField">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Riz-BT-QSS"/>
                     </constraints>
@@ -29,8 +29,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-RO-gkx" customClass="HNTextField">
-                    <rect key="frame" x="10" y="248" width="300" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="e7X-Kb-ivu"/>
                     </constraints>
@@ -38,14 +37,13 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge0-v3-Pxj">
-                    <rect key="frame" x="10" y="318" width="300" height="50"/>
-                    <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Pp4-1u-cdC"/>
                     </constraints>
                     <state key="normal" title="登  录">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -57,27 +55,25 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ckh-4w-3i6">
-                    <rect key="frame" x="10" y="375" width="63" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="63" id="7xy-vj-glM"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="找回密码">
-                        <color key="titleColor" red="1" green="0.70196078431372544" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="1" green="0.70196078431372544" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="forgotPasswordBtnClicked:" destination="-1" eventType="touchUpInside" id="EqS-PL-lgZ"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IP042" translatesAutoresizingMaskIntoConstraints="NO" id="bIE-zw-0M4">
-                    <rect key="frame" x="15" y="52" width="290" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="K7I-rh-tfi"/>
                         <constraint firstAttribute="width" constant="290" id="L2c-T3-rlb"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ge0-v3-Pxj" firstAttribute="top" secondItem="pzV-RO-gkx" secondAttribute="bottom" constant="20" id="3EH-H8-Omg"/>
                 <constraint firstItem="pzV-RO-gkx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7k7-h7-XjF"/>
@@ -93,7 +89,6 @@
                 <constraint firstItem="MWH-8j-bMR" firstAttribute="top" secondItem="bIE-zw-0M4" secondAttribute="bottom" constant="36" id="vWw-Qp-7H3"/>
                 <constraint firstItem="Ckh-4w-3i6" firstAttribute="top" secondItem="ge0-v3-Pxj" secondAttribute="bottom" constant="7" id="ze0-w7-8fO"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="329" y="377"/>
         </view>
     </objects>

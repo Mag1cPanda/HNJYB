@@ -6,12 +6,10 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "PublicViewController.h"
+#import "CaseBaseViewController.h"
 
-@interface MoreSGSCViewController : PublicViewController
+@interface MoreSGSCViewController : CaseBaseViewController
 @property (nonatomic, copy) NSString *appcaseno;
-
 @property (nonatomic, copy) NSArray *selectedItem;
 @property (nonatomic, copy) NSString *caseDes;
-
 @end

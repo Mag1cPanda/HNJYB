@@ -7,9 +7,8 @@
 //
 
 #import "PublicViewController.h"
-#import "ImgCodeView.h"
 
-@interface ForgotPasswordViewController : PublicViewController<ImgCodeViewDelegate>
+@interface ForgotPasswordViewController : PublicViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
 @property (weak, nonatomic) IBOutlet UITextField *imgCodeField;
@@ -17,9 +16,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *pwdField;
 @property (weak, nonatomic) IBOutlet UITextField *insureField;
 
-@property (weak, nonatomic) IBOutlet UIView *backCodeView;
-@property (weak, nonatomic) IBOutlet UIView *verCodeBtnBack;
+@property (weak, nonatomic) IBOutlet UIButton *showOrHide1;
+@property (weak, nonatomic) IBOutlet UIButton *showOrHide2;
 
+@property (weak, nonatomic) IBOutlet UIButton *imageCode;
+@property (weak, nonatomic) IBOutlet UIButton *phoneCodeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 
 @end

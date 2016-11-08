@@ -6,31 +6,33 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "CaseViewController.h"
-#import "HMSegmentedControl.h"
-#import "iCarousel.h"
-#import "IngCaseCell.h"
-#import "EdCaseCell.h"
-#import "CaseModel.h"
+#import "CaseAuditViewController.h"
 #import "CaseDetailViewController.h"
+#import "CaseModel.h"
+#import "CaseViewController.h"
+#import "EdCaseCell.h"
+#import "HMSegmentedControl.h"
+#import "IngCaseCell.h"
 #import "JFCreateProtocolVC.h"
 #import "OneSGSCViewController.h"
-#import "XZQXViewController.h"
 #import "UIScrollView+EmptyDataSet.h"
+#import "XZQXViewController.h"
+#import "ZRRDViewController.h"
+#import "iCarousel.h"
+#import "XJSGXTViewController.h"
 
-@interface CaseViewController ()
-<iCarouselDataSource,
-iCarouselDelegate,
-UITableViewDataSource,
-UITableViewDelegate,
-DZNEmptyDataSetDelegate,
-DZNEmptyDataSetSource>
+@interface CaseViewController () < iCarouselDataSource,
+                                   iCarouselDelegate,
+                                   UITableViewDataSource,
+                                   UITableViewDelegate,
+                                   DZNEmptyDataSetDelegate,
+                                   DZNEmptyDataSetSource >
 {
     UITableView *ingTable;
     UITableView *edTable;
     NSMutableArray *ingArr;
     NSMutableArray *edArr;
-    
+
     MBProgressHUD *hud;
 }
 @property (nonatomic, strong) HMSegmentedControl *segmentControl;
@@ -39,43 +41,44 @@ DZNEmptyDataSetSource>
 
 @implementation CaseViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"历史案件";
     ingArr = [NSMutableArray array];
     edArr = @[].mutableCopy;
-    
+
     [self initSegmentControlAndCarousel];
-    
+
     [self initTableView];
-    
+
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
+
     [self loadDataWithType:@"0"];
     [self loadDataWithType:@"1"];
 }
 
--(void)backAction{
+- (void)backAction
+{
     [self.navigationController popViewControllerAnimated:NO];
 }
 
 #pragma mark - 初始化segmentControl和Carousel
--(void)initSegmentControlAndCarousel{
-    
-    _carousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, 40, ScreenWidth, ScreenHeight-104)];
+- (void)initSegmentControlAndCarousel
+{
+    _carousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, 40, ScreenWidth, ScreenHeight - 104)];
     _carousel.dataSource = self;
     _carousel.delegate = self;
     _carousel.decelerationRate = 0.7;
     _carousel.type = iCarouselTypeLinear;
     _carousel.pagingEnabled = YES;
     _carousel.edgeRecognition = YES;
-    //    _carousel.bounceDistance = 0.4;
     _carousel.bounces = NO;
     [self.view addSubview:_carousel];
-    
-    _segmentControl = [[HMSegmentedControl alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
-    _segmentControl.sectionTitles = @[@"处理中", @"已完成"];
+
+    _segmentControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+    _segmentControl.sectionTitles = @[ @"处理中", @"已完成" ];
     _segmentControl.backgroundColor = HNBackColor;
     _segmentControl.titleTextAttributes = @{NSFontAttributeName : [UIFont systemFontOfSize:15]};
     _segmentControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : HNBlue, NSFontAttributeName : [UIFont systemFontOfSize:16]};
@@ -84,19 +87,19 @@ DZNEmptyDataSetSource>
     _segmentControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     _segmentControl.selectionIndicatorHeight = 2.0;
     [self.view addSubview:_segmentControl];
-    
+
     __weak typeof(self) weakSelf = self;
-    
+
     [self.segmentControl setIndexChangeBlock:^(NSInteger index) {
-        
-        [weakSelf.carousel scrollToItemAtIndex:index animated:NO];
-        
+
+      [weakSelf.carousel scrollToItemAtIndex:index animated:NO];
+
     }];
 }
 
 #pragma mark - 初始化tableView
--(void)initTableView{
-    
+- (void)initTableView
+{
     ingTable = [[UITableView alloc] initWithFrame:_carousel.bounds style:UITableViewStylePlain];
     ingTable.delegate = self;
     ingTable.dataSource = self;
@@ -105,7 +108,7 @@ DZNEmptyDataSetSource>
     ingTable.hidden = YES;
     ingTable.tableFooterView = [UIView new];
     [ingTable registerNib:[UINib nibWithNibName:@"IngCaseCell" bundle:nil] forCellReuseIdentifier:@"IngCaseCell"];
-    
+
     edTable = [[UITableView alloc] initWithFrame:_carousel.bounds style:UITableViewStylePlain];
     edTable.delegate = self;
     edTable.dataSource = self;
@@ -114,53 +117,60 @@ DZNEmptyDataSetSource>
     edTable.hidden = YES;
     edTable.tableFooterView = [UIView new];
     [edTable registerNib:[UINib nibWithNibName:@"EdCaseCell" bundle:nil] forCellReuseIdentifier:@"EdCaseCell"];
-    
 }
 
--(void)loadDataWithType:(NSString *)type{
-    
+#pragma mark - 加载数据
+- (void)loadDataWithType:(NSString *)type
+{
     NSMutableDictionary *bean = [NSMutableDictionary dictionary];
     [bean setValue:GlobleInstance.userid forKey:@"userid"];
     [bean setValue:type forKey:@"querytype"];
     [bean setValue:GlobleInstance.userflag forKey:@"username"];
     [bean setValue:GlobleInstance.token forKey:@"token"];
-    
+
     [LSHttpManager requestUrl:HNServiceURL serviceName:@"kckpjjSearchAllCase" parameters:bean complete:^(id result, ResultType resultType) {
-       
-        if ([type isEqualToString:@"1"]) {
-            [hud hide:YES];
-        }
-        
-        if (result) {
-            NSLog(@"所有案件%@ -> %@",type,JsonResult);
-            ingTable.hidden = NO;
-            edTable.hidden = NO;
-        }
-        
-        if ([result[@"restate"] isEqualToString:@"1"]) {
-            
-            if ([result[@"data"] isKindOfClass:[NSArray class]]) {
-                NSArray *data = result[@"data"];
-                for (NSDictionary *dic in data) {
-                    CaseModel *model = [[CaseModel alloc] initWithDict:dic];
-                    if ([type isEqualToString:@"0"]) {
-                        [ingArr addObject:model];
-                    }
-                    else {
-                        [edArr addObject:model];
-                    }
-                }
-            }
-        }
-        
-        if ([type isEqualToString:@"0"]) {
-            [ingTable reloadData];
-        }
-        else {
-            
-            [edTable reloadData];
-        }
-        
+
+      if ([type isEqualToString:@"1"])
+      {
+          [hud hide:YES];
+      }
+
+      if (result)
+      {
+          NSLog(@"所有案件%@ -> %@", type, JsonResult);
+          ingTable.hidden = NO;
+          edTable.hidden = NO;
+      }
+
+      if ([result[@"restate"] isEqualToString:@"1"])
+      {
+          if ([result[@"data"] isKindOfClass:[NSArray class]])
+          {
+              NSArray *data = result[@"data"];
+              for (NSDictionary *dic in data)
+              {
+                  CaseModel *model = [[CaseModel alloc] initWithDict:dic];
+                  if ([type isEqualToString:@"0"])
+                  {
+                      [ingArr addObject:model];
+                  }
+                  else
+                  {
+                      [edArr addObject:model];
+                  }
+              }
+          }
+      }
+
+      if ([type isEqualToString:@"0"])
+      {
+          [ingTable reloadData];
+      }
+      else
+      {
+          [edTable reloadData];
+      }
+
     }];
 }
 
@@ -172,88 +182,134 @@ DZNEmptyDataSetSource>
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    if (index == 0 ) {
+    if (index == 0)
+    {
         view = ingTable;
     }
-    else {
+    else
+    {
         view = edTable;
     }
 
     return view;
 }
 
--(void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
+- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
     [_segmentControl setSelectedSegmentIndex:carousel.currentItemIndex animated:YES];
-    
-//    if (carousel.currentItemIndex == 0) {
-//        [ingArr removeAllObjects];
-//        [self loadDataWithType:@"0"];
-//    }
-//    else{
-//        []
-//        [self loadDataWithType:@"1"];
-//    }
 }
 
 #pragma mark - 继续处理
--(void)continueProcessing:(UIButton *)btn{
+- (void)continueProcessing:(UIButton *)btn
+{
     CaseModel *model = ingArr[btn.tag];
-    GlobleInstance.appcaseno = model.casenumber;
+    //给单例appcaseno重新赋值
+    GlobleInstance.appcaseno = model.appcaseno;
+
     //案件信息
-    if ([model.state isEqualToString:@"9"]) {
-        if ([model.casetype isEqualToString:@"0"]) {
+    if ([model.state isEqualToString:@"9"])
+    {
+        if ([model.casetype isEqualToString:@"0"])
+        {
             //单车
             OneSGSCViewController *vc = [OneSGSCViewController new];
             vc.isHistoryPush = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
-        else {
+        else
+        {
             //双车
-            XZQXViewController *vc = [XZQXViewController new];
-            vc.isHistoryPush = YES;
-            [self.navigationController pushViewController:vc animated:YES];
+            //交警
+            if (GlobleInstance.userType == TrafficPolice)
+            {
+                XZQXViewController *vc = [XZQXViewController new];
+                vc.isHistoryPush = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            //协警
+            else
+            {
+                XJSGXTViewController *vc = [XJSGXTViewController new];
+                vc.isHistoryPush = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            
         }
-        
     }
     //生成协议
-    else if ([model.state isEqualToString:@"10"]){
-//        _icon.image = [UIImage imageNamed:@"scxy"];
+    else if ([model.state isEqualToString:@"10"])
+    {
         JFCreateProtocolVC *vc = [JFCreateProtocolVC new];
+        vc.casenumber = model.casenumber;
         vc.isHistoryPush = YES;
         [self.navigationController pushViewController:vc animated:YES];
+    }
+
+    //等待定责
+    else if ([model.state isEqualToString:@"1"])
+    {
+        MBProgressHUD *dddzHud = [MBProgressHUD showHUDAddedTo:self.view animated:false];
+        dddzHud.mode = MBProgressHUDModeText;
+        dddzHud.labelText = @"责任类型等待审核中，审核完成后方可继续操作";
+        dddzHud.labelFont = HNFont(13);
+        [dddzHud hide:YES afterDelay:1.5];
+    }
+
+    //定责照片待审
+    else if ([model.state isEqualToString:@"7"])
+    {
+        CaseAuditViewController *vc = [CaseAuditViewController new];
+        GlobleInstance.appcaseno = model.appcaseno;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+
+    //撤销案件
+    else if ([model.state isEqualToString:@"6"])
+    {
+        MBProgressHUD *cxHud = [MBProgressHUD showHUDAddedTo:self.view animated:false];
+        cxHud.mode = MBProgressHUDModeText;
+        cxHud.labelText = @"案件已撤销";
+        cxHud.labelFont = HNFont(13);
+        [cxHud hide:YES afterDelay:1.5];
     }
 }
 
 #pragma mark - tableView Delegate & DataSource
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (tableView == ingTable) {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (tableView == ingTable)
+    {
         return ingArr.count;
     }
-    
-    else {
+
+    else
+    {
         return edArr.count;
     }
 }
 
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView == ingTable) {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == ingTable)
+    {
         IngCaseCell *cell = [ingTable dequeueReusableCellWithIdentifier:@"IngCaseCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if (ingArr.count > indexPath.row) {
+        if (ingArr.count > indexPath.row)
+        {
             CaseModel *model = ingArr[indexPath.row];
             cell.model = model;
         }
         cell.jxclBtn.tag = indexPath.row;
-        [cell.jxclBtn addTarget:self action:@selector(continueProcessing:) forControlEvents:1<<6];
+        [cell.jxclBtn addTarget:self action:@selector(continueProcessing:) forControlEvents:1 << 6];
         return cell;
     }
-    
-    else {
+
+    else
+    {
         EdCaseCell *cell = [edTable dequeueReusableCellWithIdentifier:@"EdCaseCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if (edArr.count > indexPath.row) {
+        if (edArr.count > indexPath.row)
+        {
             CaseModel *model = edArr[indexPath.row];
             cell.model = model;
         }
@@ -261,41 +317,59 @@ DZNEmptyDataSetSource>
     }
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView == ingTable) {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == ingTable)
+    {
         return 120;
     }
-    
-    else {
+
+    else
+    {
         return 80;
     }
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     CaseModel *model;
-    if (tableView == ingTable) {
+    if (tableView == ingTable)
+    {
         model = ingArr[indexPath.row];
     }
-    
-    else {
+
+    else
+    {
         model = edArr[indexPath.row];
     }
-    CaseDetailViewController *vc = [CaseDetailViewController new];
-    vc.casenumber = model.casenumber;
-    vc.caseState = model.state;
-    [self.navigationController pushViewController:vc animated:YES];
+
+    if ([model.state isEqualToString:@"9"] || [model.state isEqualToString:@"7"])
+    {
+        MBProgressHUD *noHud = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+        noHud.mode = MBProgressHUDModeText;
+        noHud.labelText = @"该案件暂无办理详情";
+        [noHud hide:YES afterDelay:1];
+    }
+
+    else
+    {
+        CaseDetailViewController *vc = [CaseDetailViewController new];
+        vc.casenumber = model.casenumber;
+        vc.caseState = model.state;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark - DZNEmptyDataSetDelegate Methods
-- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView{
+- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView
+{
     UIView *backView = [[UIView alloc] initWithFrame:scrollView.bounds];
     UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 317, 280)];
     imageV.center = scrollView.center;
     imageV.image = [UIImage imageNamed:@"unfinished"];
     [backView addSubview:imageV];
-    
-    return  backView;
+
+    return backView;
 }
 
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView

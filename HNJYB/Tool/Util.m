@@ -441,4 +441,17 @@ typedef void (^RefreshDataBlock)();
     BOOL isMatch = [predicate evaluateWithObject:chaimsString];
     return isMatch;
 }
+
+#pragma mark - 屏幕截图
++ (UIImage *)shotScreen
+{
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIGraphicsBeginImageContext(window.bounds.size);
+    [window.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 @end

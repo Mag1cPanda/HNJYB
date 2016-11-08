@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreTipsViewController">
+            <connections>
+                <outlet property="tipsLab" destination="dPi-1O-PdR" id="OHT-vK-ZAJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定责环节结束请请告知车主查收短信并按短信提示操作！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPi-1O-PdR">
+                    <rect key="frame" x="20" y="195.5" width="280" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Rj7-9X-vcV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay7-6G-UxK">
+                    <rect key="frame" x="15" y="269.5" width="290" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="X5k-Ou-Q35"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="案件结束" backgroundImage="blue">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="KCG-us-qba"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tips05" translatesAutoresizingMaskIntoConstraints="NO" id="znv-tj-5Ki">
+                    <rect key="frame" x="20" y="27" width="280" height="144.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="znv-tj-5Ki" secondAttribute="height" multiplier="35:18" id="ZzC-J1-FGg"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dPi-1O-PdR" firstAttribute="centerX" secondItem="Ay7-6G-UxK" secondAttribute="centerX" id="3vu-C9-tma"/>
+                <constraint firstItem="Ay7-6G-UxK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="7uI-jE-fCX"/>
+                <constraint firstItem="znv-tj-5Ki" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AAp-hF-WUV"/>
+                <constraint firstItem="dPi-1O-PdR" firstAttribute="top" secondItem="znv-tj-5Ki" secondAttribute="bottom" constant="24" id="EAG-SG-38q"/>
+                <constraint firstItem="znv-tj-5Ki" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="Wag-hG-G8h"/>
+                <constraint firstItem="znv-tj-5Ki" firstAttribute="leading" secondItem="dPi-1O-PdR" secondAttribute="leading" id="edf-e9-dxN"/>
+                <constraint firstItem="znv-tj-5Ki" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="hOJ-OY-6cq"/>
+                <constraint firstItem="znv-tj-5Ki" firstAttribute="trailing" secondItem="dPi-1O-PdR" secondAttribute="trailing" id="pR1-n3-Eg0"/>
+                <constraint firstItem="Ay7-6G-UxK" firstAttribute="top" secondItem="dPi-1O-PdR" secondAttribute="bottom" constant="14" id="xJy-tg-1Na"/>
+            </constraints>
+            <point key="canvasLocation" x="25" y="52"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blue" width="52" height="88"/>
+        <image name="tips05" width="556" height="413"/>
+    </resources>
+</document>

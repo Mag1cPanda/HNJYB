@@ -10,4 +10,5 @@
 
 @interface InfoViewController : PublicViewController
 
+
 @end

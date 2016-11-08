@@ -53,7 +53,7 @@ typedef NS_ENUM(NSInteger, HNUserType) {
 @property (nonatomic, copy) NSString *yfxszStr;//乙方行驶证
 @property (nonatomic, strong) InfoModel *jfModel;
 @property (nonatomic, strong) InfoModel *yfModel;
-@property (nonatomic, assign) NSInteger photoCount;
+//@property (nonatomic, assign) NSInteger photoCount;
 
 @property (nonatomic, copy) NSString *jfocrname;
 @property (nonatomic, copy) NSString *jfocrcardno;

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "PublicViewController.h"
+#import "CaseBaseViewController.h"
 
-@interface RemoteDutyViewController : PublicViewController
+@interface RemoteDutyViewController : CaseBaseViewController
 
 @end

@@ -12,8 +12,19 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.icon.backgroundColor = [UIColor whiteColor];
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.layer.borderWidth = 1;
 }
+
+
+//-(void)setIsShoot:(BOOL)isShoot{
+//    _isShoot = isShoot;
+//}
+//
+//
+//-(void)setIsRecord:(BOOL)isRecord{
+//    _isRecord = isRecord;
+//}
 
 @end

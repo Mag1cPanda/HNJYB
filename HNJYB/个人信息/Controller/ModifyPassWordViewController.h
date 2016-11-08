@@ -6,8 +6,8 @@
 //  Copyright © 2016年 OSch. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "PublicViewController.h"
+#import <UIKit/UIKit.h>
 
 @interface ModifyPassWordViewController : PublicViewController
 
@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *pWTextField;
 
 @property (weak, nonatomic) IBOutlet UIButton *showEntryBtn1;
+
 @property (weak, nonatomic) IBOutlet UIButton *showEntryBtn2;
 
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;

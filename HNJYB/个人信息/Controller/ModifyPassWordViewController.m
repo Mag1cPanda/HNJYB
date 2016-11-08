@@ -9,6 +9,8 @@
 #import "ModifyPassWordViewController.h"
 #import "LoginViewController.h"
 #import "DESCript.h"
+#import "NavViewController.h"
+#import "LoginViewController.h"
 
 @interface ModifyPassWordViewController ()<UITextFieldDelegate>
 {
@@ -45,11 +47,13 @@
 - (IBAction)sureBtnClick:(id)sender {
     
     [self.view endEditing:YES];
+    //旧密码
+    NSString *oldPassword = [UserDefaultsUtil getDataForKey:@"password"];
     
     if (!self.oldPWTextField.text.length) {
         hudView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hudView.mode = MBProgressHUDModeText;
-        hudView.labelText = @"旧密码不能为空!";
+        hudView.labelText = @"当前密码不能为空!";
         [hudView hide:YES afterDelay:1.0];
     }
     else if (!self.pWTextField.text.length)
@@ -59,11 +63,19 @@
         hudView.labelText = @"新密码不能为空!";
         [hudView hide:YES afterDelay:1.0];
     }
+    else if (![self.oldPWTextField.text isEqualToString:oldPassword])
+    {
+        hudView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hudView.mode = MBProgressHUDModeText;
+        hudView.labelText = @"您输入的当前密码错误，请重新输入";
+        [hudView hide:YES afterDelay:2.0];
+    }
     else if (![self checkPassWordRationality:self.pWTextField.text])
     {
         hudView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hudView.mode = MBProgressHUDModeText;
-        hudView.labelText = @"请输入6~15位由字母和数字组合的密码！";
+        hudView.labelText = @"请输入6~15位由字母和数字组合的新密码";
+        hudView.labelFont = HNFont(14);
         [hudView hide:YES afterDelay:2.0];
     }
     else
@@ -82,13 +94,17 @@
         [bean setValue:newPassword forKey:@"passwordnew"];
         [bean setValue:[Globle getInstance].token forKey:@"token"];
         
-        [LSHttpManager requestUrl:HNServiceURL serviceName:@"appusermodifypwd" parameters:bean complete:^(id result, ResultType resultType) {
+        [LSHttpManager requestUrl:HNServiceURL serviceName:@"jjappusermodifypwd" parameters:bean complete:^(id result, ResultType resultType) {
             
             [activityHud hide:YES];
             if (result != nil) {
                 if ([result[@"restate"] isEqualToString:@"1"]) {
                     
-                    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"密码修改成功" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                    [UserDefaultsUtil saveNSUserDefaultsForObject:@"" forKey:@"username"];
+                    [UserDefaultsUtil saveNSUserDefaultsForObject:@"" forKey:@"password"];
+                    
+                    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"密码修改成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                    alertView.tag = 100;
                     [alertView show];
                 }
                 else
@@ -126,12 +142,11 @@
 #pragma mark- alertView
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
-        LoginViewController *loginVC = [[LoginViewController alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-        nav.navigationBar.translucent = NO;
-        self.view.window.rootViewController = nav;
+    if (alertView.tag == 100) {
+        NavViewController *nav = [[NavViewController alloc] initWithRootViewController:[LoginViewController new]];
+        [self presentViewController:nav animated:YES completion:nil];
     }
+    
 }
 
 #pragma mark - 正则验证用户名和密码
@@ -141,10 +156,6 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",pattern];
     BOOL isMatch = [predicate evaluateWithObject:rationalityString];
     return isMatch;
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSString *phoneNum;
 @property (nonatomic, copy) NSString *driveNum;
 @property (nonatomic, copy) NSString *vinNum;
-@property (nonatomic, copy) NSString *recordNum;
+//@property (nonatomic, copy) NSString *recordNum;
+@property (nonatomic, copy) NSString *bdhNum;
 
 @end

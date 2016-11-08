@@ -20,7 +20,8 @@
 @property (nonatomic, strong) SGSCView *lxdhView;
 @property (nonatomic, strong) SGSCView *jszView;
 @property (nonatomic, strong) SGSCView *cjhView;
-@property (nonatomic, strong) SGSCView *daView;
+//@property (nonatomic, strong) SGSCView *daView;
+@property (nonatomic, strong) SGSCView *bdhView;
 @property (nonatomic, strong) SRSelectListView *selectList;
 
 @property (nonatomic, strong) UILabel *titleLab;
@@ -31,7 +32,8 @@
 @property (nonatomic, copy) NSString *carNo;
 @property (nonatomic, copy) NSString *selectedIndex;
 
--(instancetype)initWithFrame:(CGRect)frame groupId:(NSString *)groupId;
+@property (nonatomic, strong) UIButton *codeBtn;
 
+-(instancetype)initWithFrame:(CGRect)frame groupId:(NSString *)groupId;
 
 @end

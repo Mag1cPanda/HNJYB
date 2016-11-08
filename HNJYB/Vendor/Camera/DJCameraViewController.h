@@ -28,5 +28,7 @@ typedef void (^TakePhotoFinished)(UIImage *image);
 
 @property (nonatomic, assign) id<DJCameraViewControllerDelegate>delegate;
 
+@property (nonatomic, copy) NSString *noticeString;
+
 @end
 

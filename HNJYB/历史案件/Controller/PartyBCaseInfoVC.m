@@ -14,42 +14,59 @@
 
 @implementation PartyBCaseInfoVC
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = self.titleStr;
     self.carNo.text = _partyBDic[@"casecarno"];
     self.carUser.text = _partyBDic[@"carownname"];
     self.phoneNum.text = _partyBDic[@"carownphone"];
-    
+
     NSString *dutyState = _partyBDic[@"dutytype"];
-    if ([dutyState isEqualToString:@"0"]) {
-        dutyState = @"全责";
+    NSLog(@"dutyState -> %@", dutyState);
+
+    if ([dutyState isEqualToString:@"0"])
+    {
+        self.dutyState.text = @"全责";
     }
-    
-    if ([dutyState isEqualToString:@"1"]) {
-        dutyState = @"无责";
+
+    else if ([dutyState isEqualToString:@"1"])
+    {
+        self.dutyState.text = @"无责";
     }
-    
-    if ([dutyState isEqualToString:@"2"]) {
-        dutyState = @"同责";
+
+    else if ([dutyState isEqualToString:@"2"])
+    {
+        self.dutyState.text = @"同责";
     }
-    
-    if ([dutyState isEqualToString:@"3"]) {
-        dutyState = @"主责";
+
+    else if ([dutyState isEqualToString:@"3"])
+    {
+        self.dutyState.text = @"主责";
     }
-    
-    if ([dutyState isEqualToString:@"4"]) {
-        dutyState = @"次责";
+
+    else if ([dutyState isEqualToString:@"4"])
+    {
+        self.dutyState.text = @"次责";
     }
-    
-    self.dutyState.text = dutyState;
+
+    else
+    {
+        self.dutyState.text = @"未知";
+    }
+
+    //单车事故责任状态全部为全责
+    if ([self.titleStr isEqualToString:@"车主事故信息"])
+    {
+        self.dutyState.text = @"全责";
+    }
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

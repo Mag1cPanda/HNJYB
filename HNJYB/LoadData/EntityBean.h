@@ -13,8 +13,8 @@
     NSMutableDictionary *dic;
 }
 
--(NSDictionary *)getDic;
--(NSObject *)objectForKey:(NSObject *)key;
+- (NSDictionary *)getDic;
+- (NSObject *)objectForKey:(NSObject *)key;
 - (void)setValue:(id)value forKey:(NSString *)key;
 
 ////set方法

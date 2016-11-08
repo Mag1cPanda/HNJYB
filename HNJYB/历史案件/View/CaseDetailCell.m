@@ -10,18 +10,21 @@
 
 @implementation CaseDetailCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     // Initialization code
 }
 
--(void)setDataDic:(NSDictionary *)dataDic{
+- (void)setDataDic:(NSDictionary *)dataDic
+{
     _dataDic = dataDic;
     _caseNum.text = dataDic[@"casenumber"];
     _submitTime.text = dataDic[@"casehaptime"];
     _casePlace.text = dataDic[@"caseaddress"];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state

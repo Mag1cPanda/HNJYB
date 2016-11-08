@@ -72,6 +72,14 @@
         guideImageView.transform = CGAffineTransformMakeRotation(M_PI/2);
         [pickView.superview addSubview:guideImageView];
         
+        //顶部照片类型
+        UILabel *noticelabels = [[UILabel alloc]initWithFrame:CGRectMake(AppWidth - 150, AppHeigt * 0.5, 260, 37)];
+        noticelabels.text = self.noticeString;
+        noticelabels.textColor = [UIColor blackColor];
+        noticelabels.transform = CGAffineTransformMakeRotation(M_PI/2);
+        [pickView.superview addSubview:noticelabels];
+        
+        //危险提示
         UIView *stadicView = [[UIView alloc]initWithFrame:CGRectMake(-110, (AppHeigt- 106 - 37) * 0.5, 300, 37)];
         stadicView.transform = CGAffineTransformMakeRotation(M_PI/2);
         UIImageView *stadicImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 300, 37)];

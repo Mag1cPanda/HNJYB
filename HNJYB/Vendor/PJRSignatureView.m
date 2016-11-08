@@ -30,7 +30,7 @@
         self.backgroundColor = [UIColor whiteColor];
         [self setMultipleTouchEnabled:NO];
         beizerPath = [UIBezierPath bezierPath];
-        [beizerPath setLineWidth:2.0];
+        [beizerPath setLineWidth:5.0];
 //        _lblSignature = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.height/7.5, self.frame.size.width/4, self.frame.size.width, lblHeight)];
         
         _lblSignature = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, lblHeight)];
@@ -152,21 +152,4 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

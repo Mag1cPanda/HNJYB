@@ -10,35 +10,36 @@
 
 @implementation EntityBean
 
--(id)init
+- (id)init
 {
     self = [super init];
-    if(self)
+    if (self)
     {
         dic = [[NSMutableDictionary alloc] init];
         //[self setValue:@"com.longrise.LEAP.Base.Objects.EntityBean" forKey:@"javaClass"];
     }
 
-    return  self;
+    return self;
 }
 
--(NSObject *)objectForKey:(NSObject *)key
+- (NSObject *)objectForKey:(NSObject *)key
 {
-    if(nil != dic)
+    if (nil != dic)
     {
         return [dic objectForKey:key];
     }
     return nil;
 }
+
 - (void)setValue:(id)value forKey:(NSString *)key
 {
-    if(nil != dic)
+    if (nil != dic)
     {
         [dic setValue:value forKey:key];
     }
 }
 
--(NSDictionary *)getDic
+- (NSDictionary *)getDic
 {
     return dic;
 }
@@ -106,7 +107,7 @@
 //        BOOL b = [string boolValue];
 //        return b;
 //    }
-//    
+//
 //    return false;
 //}
 //-(float)getFloatForKey:(NSString *)key

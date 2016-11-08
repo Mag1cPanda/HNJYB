@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OneTipsViewController">
+            <connections>
+                <outlet property="confirmBtn" destination="ecq-EZ-0dr" id="hMK-hq-kTA"/>
+                <outlet property="tipsImage" destination="mjN-Ue-sr3" id="xfB-sf-JbT"/>
+                <outlet property="tipsLab" destination="RNj-1c-t8g" id="QWv-dC-Z89"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请告知车主查收短信并按短信提示操作即可进行保险报案！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNj-1c-t8g">
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecq-EZ-0dr">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="7Zk-05-4pP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="事故信息采集完成" backgroundImage="blue">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="yDQ-ZC-9kE"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IP021" translatesAutoresizingMaskIntoConstraints="NO" id="mjN-Ue-sr3">
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="mjN-Ue-sr3" secondAttribute="height" multiplier="280:191" id="St8-0Y-9Y7"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RNj-1c-t8g" firstAttribute="centerX" secondItem="ecq-EZ-0dr" secondAttribute="centerX" id="GgH-qc-KfW"/>
+                <constraint firstItem="mjN-Ue-sr3" firstAttribute="trailing" secondItem="RNj-1c-t8g" secondAttribute="trailing" id="Ii3-hj-er7"/>
+                <constraint firstItem="mjN-Ue-sr3" firstAttribute="leading" secondItem="RNj-1c-t8g" secondAttribute="leading" id="OCD-kW-CYm"/>
+                <constraint firstItem="ecq-EZ-0dr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="cdk-Jw-6XW"/>
+                <constraint firstItem="RNj-1c-t8g" firstAttribute="top" secondItem="mjN-Ue-sr3" secondAttribute="bottom" constant="24" id="ek9-BH-B2y"/>
+                <constraint firstItem="ecq-EZ-0dr" firstAttribute="top" secondItem="RNj-1c-t8g" secondAttribute="bottom" constant="14" id="lMc-1b-VV6"/>
+                <constraint firstItem="mjN-Ue-sr3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="m98-ck-MHI"/>
+                <constraint firstItem="mjN-Ue-sr3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="u0q-bc-Ln9"/>
+                <constraint firstItem="mjN-Ue-sr3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="zIq-r8-nxt"/>
+            </constraints>
+            <point key="canvasLocation" x="25" y="53"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="IP021" width="309" height="191"/>
+        <image name="blue" width="52" height="88"/>
+    </resources>
+</document>

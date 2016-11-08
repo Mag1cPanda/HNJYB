@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "PublicViewController.h"
+#import "CaseBaseViewController.h"
 
-@interface OneSGSCViewController : PublicViewController
+@interface OneSGSCViewController : CaseBaseViewController
 @property (nonatomic, copy) NSString *appcaseno;
 @property (nonatomic, copy) NSString *jszStr;
 @property (nonatomic, copy) NSString *xszStr;

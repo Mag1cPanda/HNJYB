@@ -6,11 +6,11 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "PublicViewController.h"
+#import "CaseBaseViewController.h"
 #include "InfoModel.h"
 #import "OwnerModel.h"
 
-@interface YFCreateProtocolVC : PublicViewController
+@interface YFCreateProtocolVC : CaseBaseViewController
 @property (nonatomic, strong) InfoModel *jfModel;
 @property (nonatomic, strong) InfoModel *yfModel;
 
@@ -23,4 +23,6 @@
 @property (nonatomic, copy) NSString *jfImgStr;
 @property (nonatomic, copy) NSString *jfCode;
 @property (nonatomic, copy) NSString *jfAudioStr;
+
+@property (nonatomic, copy) NSString *titleStr;
 @end

@@ -20,7 +20,7 @@
         self.layer.cornerRadius = 5;
         self.clipsToBounds = YES;
         
-        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(15, self.height/2-10, 100, 20)];
+        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(15, self.height/2-10, 90, 20)];
         _titleLab.textColor = [UIColor darkGrayColor];
         _titleLab.font = HNFont(16);
         [self addSubview:_titleLab];

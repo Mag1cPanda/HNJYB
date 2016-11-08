@@ -12,7 +12,6 @@
 
 @implementation Globle
 
-
 +(Globle *)getInstance
 {
     static Globle *globle;
@@ -24,4 +23,5 @@
     
     return globle;
 }
+
 @end

@@ -8,18 +8,20 @@
 
 #import "ModifyPhoneNoViewController.h"
 #import "DESCript.h"
-#import "ImgCodeView.h"
+#import "UIButton+WebCache.h"
 
-@interface ModifyPhoneNoViewController ()<ImgCodeViewDelegate>
+@interface ModifyPhoneNoViewController ()<UIAlertViewDelegate>
 {
-    NSInteger seconds;
+    NSInteger count;
     NSTimer *codeTimer;
     UIButton *codeButton;
-    NSString *imgCodeViewId; //图片验证码id
+    NSString *imgCodeID; //图片验证码id
     NSString *phoneString;
     MBProgressHUD *activityHud;
     MBProgressHUD *hudView;
+    UIAlertView *successAlert;
 }
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpace;
 @end
 
 @implementation ModifyPhoneNoViewController
@@ -27,15 +29,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self init_UI];
-}
-
-- (void)init_UI
-{
-    self.title = @"修改手机号";
-    seconds = 60;
+    NSString *mobilephone = [NSString stringWithFormat:@"%@",GlobleInstance.mobilephone];
+    if (mobilephone.length == 11) {
+        self.title = @"修改手机号";
+        self.tipsIcon.hidden = false;
+        self.tipsLab.hidden = false;
+    }
+    else {
+        _topSpace.constant = 20;
+        self.title = @"绑定手机号";
+        self.tipsIcon.hidden = true;
+        self.tipsLab.hidden = true;
+    }
     
-    self.phoneNoLabel.text = self.oldPhoneNO;
+    count = 60;
+    
+    self.phoneNoLabel.text = GlobleInstance.mobilephone;
     
     self.PhoneNoNew.layer.cornerRadius = 5;
     self.PhoneNoNew.layer.masksToBounds = YES;
@@ -43,15 +52,18 @@
     self.sureNextBtn.layer.cornerRadius = 5;
     self.sureNextBtn.layer.masksToBounds = YES;
     
-    ImgCodeView *imgCodeView = [[ImgCodeView alloc]initWithFrame:CGRectMake(0, 1, self.codeImageView.frame.size.width,self.codeImageView.frame.size.height - 4)];
-    imgCodeView.delegate = self;
-    [self.codeImageView addSubview:imgCodeView];
+    [self getImageCode];
+    [self.imageCodeBtn addTarget:self action:@selector(getImageCode) forControlEvents:1<<6];
     
-    [self initVefificationCodeButton];
+    [self.phoneCodeBtn addTarget:self action:@selector(getVerifyBtnClicked:) forControlEvents:1<<6];
+    [self.phoneCodeBtn setTitleColor:HNBlue forState:0];
+    
 }
 
 #pragma mark - 修改手机号码
 - (IBAction)sureNextClick:(id)sender {
+    
+    [self.view endEditing:YES];
     
     if (!self.imageCodeTextField.text.length) {
         [self showHudWithMessage:@"请先输入图片验证码!" afterDelay:1];
@@ -100,8 +112,20 @@
             if ([result[@"restate"] isEqualToString:@"1"]) {
                 
                 phoneString = self.PhoneNoNew.text;
-                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"绑定成功" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-                [alertView show];
+                if (_block) {
+                    _block(phoneString);
+                }
+                NSString *noticeStr;
+                if ([self.title isEqualToString:@"修改手机号"]) {
+                    noticeStr = @"修改成功";
+                }
+                else {
+                    noticeStr = @"绑定成功";
+                }
+                
+                successAlert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:noticeStr delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                [successAlert show];
+                
             }
             else
             {
@@ -121,24 +145,6 @@
     
 }
 
-#pragma mark - 创建发送验证码按钮
--(void)initVefificationCodeButton
-{
-    codeButton = [[UIButton alloc]initWithFrame:self.veficationCodeView.bounds];
-    [codeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-    [codeButton setTitleColor:[UIColor colorWithRed:91/255.0 green:177/255.0 blue:36/255.0 alpha:1] forState:UIControlStateNormal];
-    codeButton.titleLabel.font = [UIFont systemFontOfSize:13];
-    [codeButton addTarget:self action:@selector(SendVification:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.veficationCodeView addSubview:codeButton];
-}
-
-#pragma mark -  获取图片验证码
-- (void)requestImgCodeViewID:(NSString *)imgId
-{
-    imgCodeViewId = imgId;
-}
-
 -(void)showHudWithMessage:(NSString *)msg afterDelay:(NSTimeInterval)second
 {
     hudView = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
@@ -147,9 +153,28 @@
     [hudView hide:YES afterDelay:second];
 }
 
-#pragma mark - 发送请求
-- (void)SendVification:(UIButton *)sender
+#pragma mark - 图片验证码
+-(void)getImageCode{
+    self.imageCodeBtn.userInteractionEnabled = false;
+    [LSHttpManager requestUrl:HNServiceURL serviceName:@"appcodecreater" parameters:nil complete:^(id result, ResultType resultType) {
+        
+        self.imageCodeBtn.userInteractionEnabled = true;
+        NSLog(@"图片验证码 ~ %@",[Util objectToJson:result]);
+        if ([result[@"restate"]isEqualToString:@"1"])
+        {
+            NSURL *codeUrl = [NSURL URLWithString:result[@"data"][@"img"]];
+            [self.imageCodeBtn sd_setBackgroundImageWithURL:codeUrl forState:0];
+            imgCodeID = result[@"data"][@"imgid"];
+        }
+    }];
+}
+
+
+#pragma mark - 获取验证码
+- (void)getVerifyBtnClicked:(UIButton *)sender
 {
+    [self.view endEditing:YES];
+    
     if (!self.imageCodeTextField.text.length) {
         [self showHudWithMessage:@"请先输入图片验证码!" afterDelay:1];
     }
@@ -171,7 +196,7 @@
         NSMutableDictionary *bean = [[NSMutableDictionary alloc] init];
         [bean setValue:self.PhoneNoNew.text forKey:@"mobilenumber"];
         [bean setObject:self.imageCodeTextField.text forKey:@"imgcode"];
-        [bean setObject:imgCodeViewId forKey:@"imgid"];
+        [bean setObject:imgCodeID forKey:@"imgid"];
         
         [LSHttpManager requestUrl:HNServiceURL serviceName:@"jjappgetmodfiyphonecode" parameters:bean complete:^(id result, ResultType resultType) {
             
@@ -183,7 +208,7 @@
                 
                 if ([result[@"restate"] isEqualToString:@"1"]) {
                     [self showHudWithMessage:@"验证码发送成功！" afterDelay:1];
-                    codeTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(retransmissiontimer:) userInfo:nil repeats:YES];
+                    codeTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
                 }
                 else
                 {
@@ -204,34 +229,27 @@
     }
 }
 
-- (void)retransmissiontimer:(NSTimer *)timer
-{
-    seconds--;
-    if (seconds == 0){
+-(void)countDown{
+    if (count == 1)
+    {
+        _phoneCodeBtn.userInteractionEnabled = YES;
+        [_phoneCodeBtn setTitle:@"获取验证码" forState:0];
+        count = 60;
         [codeTimer invalidate];
-        codeTimer = nil;
-        seconds = 60;
-        [codeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-        codeButton.enabled = YES;
-        
-    }else{
-        [codeButton setTitle:[NSString stringWithFormat:@"%zis后重发",seconds] forState:UIControlStateNormal];
+    }
+    else
+    {
+        _phoneCodeBtn.userInteractionEnabled = NO;
+        count--;
+        NSString *title = [NSString stringWithFormat:@"%ziS",count];
+        [_phoneCodeBtn setTitle:title forState:0];
     }
 }
 
-#pragma mark- alertView
-
-- (void)showAlertView:(NSString *)noticeText
-{
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:noticeText delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alert show];
-}
-
+#pragma mark- AlertView Delegate
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue:phoneString forKey:@"phone"];
+    if (alertView == successAlert) {
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

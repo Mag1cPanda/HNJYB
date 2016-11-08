@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PublicViewController : UIViewController
+@property (nonatomic, strong) UIButton *backBtn;
 -(void)backAction;
 @end

@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RemoteDutyViewController">
@@ -15,38 +16,34 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IP030" translatesAutoresizingMaskIntoConstraints="NO" id="Xgm-UB-YLB">
-                    <rect key="frame" x="132" y="49" width="57" height="57"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IP030" translatesAutoresizingMaskIntoConstraints="NO" id="Xgm-UB-YLB">
                     <constraints>
                         <constraint firstAttribute="height" constant="57" id="qts-R4-lmU"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提交成功" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gg-Vw-glF">
-                    <rect key="frame" x="25" y="122" width="280" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="6l9-jT-u22"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.18823529411764706" green="0.69411764705882351" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.18823529411764706" green="0.69411764705882351" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工作人员会尽快对您提交的事故进行审核，审核结果将通过短信形式告知，请保持通讯畅通，以便我们稍后和您联系" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SK0-bZ-PEv">
-                    <rect key="frame" x="20" y="176" width="280" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="jAq-c7-czV"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmk-dR-x1X">
-                    <rect key="frame" x="15" y="250" width="290" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="evt-rS-sD2"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                    <state key="normal" title="直接报警！" backgroundImage="blue">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="确定" backgroundImage="blue">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -54,11 +51,11 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="callPolice:" destination="-1" eventType="touchUpInside" id="cA8-BT-5op"/>
+                        <action selector="confirmBtnClicked:" destination="-1" eventType="touchUpInside" id="OHm-c6-5BL"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4gg-Vw-glF" firstAttribute="top" secondItem="Xgm-UB-YLB" secondAttribute="bottom" constant="16" id="43c-Qr-DeL"/>
                 <constraint firstItem="SK0-bZ-PEv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="7bB-vY-jks"/>
@@ -72,7 +69,6 @@
                 <constraint firstItem="SK0-bZ-PEv" firstAttribute="centerX" secondItem="Xgm-UB-YLB" secondAttribute="centerX" id="mFj-Wc-5jL"/>
                 <constraint firstItem="4gg-Vw-glF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="qzc-4w-Wnc"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="542" y="311"/>
         </view>
     </objects>

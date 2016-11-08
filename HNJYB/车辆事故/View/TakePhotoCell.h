@@ -14,4 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 
+@property (nonatomic, assign) BOOL isShoot;
+
+@property (nonatomic, assign) BOOL isRecord;
+
 @end

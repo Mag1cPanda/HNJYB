@@ -6,10 +6,10 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "PublicViewController.h"
+#import "CaseBaseViewController.h"
 #import "InfoModel.h"
 
-@interface JFCreateProtocolVC : PublicViewController
+@interface JFCreateProtocolVC : CaseBaseViewController
 @property (nonatomic, strong) InfoModel *jfModel;
 @property (nonatomic, strong) InfoModel *yfModel;
 
@@ -17,4 +17,7 @@
 @property (nonatomic, copy) NSString *yfDutyType;
 
 @property (nonatomic, assign) BOOL isHistoryPush;
+@property (nonatomic, copy) NSString *casenumber;//用来查询历史案件信息
+
+@property (nonatomic, copy) NSString *titleStr;
 @end

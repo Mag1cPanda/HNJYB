@@ -26,16 +26,14 @@
 }
 
 #pragma mark - 下一步按钮点击事件
-- (IBAction)nextStep:(UIButton *)btn {
-    
+- (IBAction)nextStep:(UIButton *)btn
+{
     NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-    if([[UIApplication sharedApplication] canOpenURL:url])
+    if ([[UIApplication sharedApplication] canOpenURL:url])
     {
-        NSURL*url =[NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         [[UIApplication sharedApplication] openURL:url];
     }
-    
 }
-
 
 @end

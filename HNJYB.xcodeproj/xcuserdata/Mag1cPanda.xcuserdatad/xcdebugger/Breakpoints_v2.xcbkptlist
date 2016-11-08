@@ -4,374 +4,6 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/MoreCarViewController.m"
-            timestampString = "495973126.391798"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "-initUploadBean:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/SafetyTipsViewController.m"
-            timestampString = "495337690.542067"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-getPositionInfo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/View/MoreSGSCGroup.m"
-            timestampString = "492591852.469994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-initWithFrame:groupId:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x5355;&#x8f66;/OneSGSCViewController.m"
-            timestampString = "495338717.957854"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "-initScroll"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/JFCreateProtocolVC.m"
-            timestampString = "494736858.079326"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "-initScroll"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/JFCreateProtocolVC.m"
-            timestampString = "494736858.079326"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "-initScroll"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/PZNCViewController.m"
-            timestampString = "495424041.857301"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/MoreCarViewController.m"
-            timestampString = "495973126.391798"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "-createUniqueNumber"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MoreCarViewController createUniqueNumber]"
-                  moduleName = "HNJYB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8F%8C%E8%BD%A6/MoreCarViewController.m"
-                  timestampString = "493096886.22067"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "572">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[MoreCarViewController createUniqueNumber]_block_invoke"
-                  moduleName = "HNJYB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8F%8C%E8%BD%A6/MoreCarViewController.m"
-                  timestampString = "493096886.22118"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/ZRRDViewController.m"
-            timestampString = "496045179.681545"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
-            landmarkName = "-showAlertView"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/SafetyTipsViewController.m"
-            timestampString = "495337690.542067"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "-didUpdateBMKUserLocation:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/MoreCarViewController.m"
-            timestampString = "495973126.391798"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
-            landmarkName = "-uploadImageWith:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MoreCarViewController uploadImageWith:]"
-                  moduleName = "HNJYB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8F%8C%E8%BD%A6/MoreCarViewController.m"
-                  timestampString = "493611025.697558"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "350"
-                  endingLineNumber = "350"
-                  offsetFromSymbolStart = "1532">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[MoreCarViewController uploadImageWith:]_block_invoke"
-                  moduleName = "HNJYB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8F%8C%E8%BD%A6/MoreCarViewController.m"
-                  timestampString = "493611025.697855"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "350"
-                  endingLineNumber = "350"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/YFCreateProtocolVC.m"
-            timestampString = "495341612.077842"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "584"
-            endingLineNumber = "584"
-            landmarkName = "-createAgreement"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/MoreCarViewController.m"
-            timestampString = "495973126.391798"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "-takePhotoWithIndex:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x5355;&#x8f66;/OneCarViewController.m"
-            timestampString = "496029796.3201"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
-            landmarkName = "-uploadImageWith:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[OneCarViewController uploadImageWith:]"
-                  moduleName = "HNJYB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8D%95%E8%BD%A6/OneCarViewController.m"
-                  timestampString = "494478441.443002"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "386"
-                  endingLineNumber = "386"
-                  offsetFromSymbolStart = "1300">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[OneCarViewController uploadImageWith:]_block_invoke"
-                  moduleName = "HNJYB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8D%95%E8%BD%A6/OneCarViewController.m"
-                  timestampString = "494478441.443621"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "386"
-                  endingLineNumber = "386"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/JFCreateProtocolVC.m"
-            timestampString = "494736858.079326"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "-initScroll"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/MoreCarViewController.m"
-            timestampString = "495973126.391798"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "-uploadImageWith:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/YFCreateProtocolVC.m"
-            timestampString = "494736858.079326"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "-initScroll"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -382,99 +14,59 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/XZQXViewController.m"
-            timestampString = "495094914.889103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "-submitBtnClicked"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/XZQXViewController.m"
-            timestampString = "495094914.889103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/ZRRDViewController.m"
-            timestampString = "496045179.681545"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
-            landmarkName = "-showAlertView"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/JFCreateProtocolVC.m"
-            timestampString = "495339183.915905"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
-            landmarkName = "-loadHistoryData"
-            landmarkType = "5">
+            symbolName = ""
+            moduleName = "">
             <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[JFCreateProtocolVC loadHistoryData]"
-                  moduleName = "HNJYB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8F%8C%E8%BD%A6/JFCreateProtocolVC.m"
-                  timestampString = "495339183.938109"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "415"
-                  endingLineNumber = "415"
-                  offsetFromSymbolStart = "680">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__37-[JFCreateProtocolVC loadHistoryData]_block_invoke"
-                  moduleName = "HNJYB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8F%8C%E8%BD%A6/JFCreateProtocolVC.m"
-                  timestampString = "495339183.938428"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "415"
-                  endingLineNumber = "415"
-                  offsetFromSymbolStart = "68">
-               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = ""
+            moduleName = "">
+            <Locations>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/YFCreateProtocolVC.m"
+            timestampString = "499864538.707981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-initScroll"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HNJYB/Vendor/RecordHUD.m"
+            timestampString = "499880794.267332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-show"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -484,61 +76,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x5355;&#x8f66;/OneCarViewController.m"
-            timestampString = "496029796.3201"
+            timestampString = "500227035.169776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "465"
-            endingLineNumber = "465"
-            landmarkName = "-uploadVideo"
-            landmarkType = "5">
+            startingLineNumber = "562"
+            endingLineNumber = "562"
+            landmarkName = "-uploadAudio"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[OneCarViewController uploadVideo]"
+                  symbolName = "-[OneCarViewController uploadAudio]"
                   moduleName = "HNJYB"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8D%95%E8%BD%A6/OneCarViewController.m"
-                  timestampString = "495958678.51915"
+                  timestampString = "500225944.265237"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "446"
-                  endingLineNumber = "446"
-                  offsetFromSymbolStart = "1456">
+                  startingLineNumber = "571"
+                  endingLineNumber = "571"
+                  offsetFromSymbolStart = "1144">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__35-[OneCarViewController uploadVideo]_block_invoke"
+                  symbolName = "__35-[OneCarViewController uploadAudio]_block_invoke"
                   moduleName = "HNJYB"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/siren/Desktop/HNJYB/HNJYB/%E8%BD%A6%E8%BE%86%E4%BA%8B%E6%95%85/Controller/%E5%8D%95%E8%BD%A6/OneCarViewController.m"
-                  timestampString = "495958678.51929"
+                  timestampString = "500225944.270211"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "446"
-                  endingLineNumber = "446"
-                  offsetFromSymbolStart = "52">
+                  startingLineNumber = "571"
+                  endingLineNumber = "571"
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNJYB/&#x8f66;&#x8f86;&#x4e8b;&#x6545;/Controller/&#x53cc;&#x8f66;/MoreCarViewController.m"
-            timestampString = "496029796.3201"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "500"
-            endingLineNumber = "500"
-            landmarkName = "-uploadVideo"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

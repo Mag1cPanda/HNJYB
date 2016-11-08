@@ -8,16 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^HudStopRecord)();
+
 @interface RecordHUD : UIView{
     UIImageView *imgView;
-    UILabel *titleLabel;
     UILabel *timeLabel;
 }
+@property (nonatomic, strong) UIButton *titleBtn;
 @property (nonatomic, strong, readonly) UIWindow *overlayWindow;
+
+@property (nonatomic, copy) HudStopRecord stopRecord;
++ (RecordHUD *)shareView;
 
 + (void)show;
 
 + (void)dismiss;
+
+//+ (void)stopRecord:(StopRecord)block;
 
 + (void)setTitle:(NSString*)title;
 

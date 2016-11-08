@@ -73,6 +73,9 @@
 #pragma mark - 根据字符串计算size
 +(CGSize)sr_DrawTextRectWithString:(NSString *)text Width:(CGFloat)width FondSize:(CGFloat)fontSize;
 
+#pragma mark - 屏幕截图
++ (UIImage *)shotScreen;
+
 #pragma mark - imageToString
 +(NSString *)imageToString:(UIImage *)image;
 

@@ -10,7 +10,8 @@
 
 @implementation PZNCCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     // Initialization code
     self.layer.borderColor = RGB(235, 235, 235).CGColor;
     self.layer.borderWidth = 0.5;
@@ -18,7 +19,8 @@
     self.clipsToBounds = YES;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state

@@ -13,17 +13,17 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        
+    if (self)
+    {
         self.layer.cornerRadius = 5;
-        
-        _icon = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, self.height-20, self.height-20)];
+
+        _icon = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, self.height - 20, self.height - 20)];
         [self addSubview:_icon];
-        
-        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(_icon.maxX+10, 20, self.width-_icon.maxX-20, 60)];
+
+        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(_icon.maxX + 10, 20, self.width - _icon.maxX - 20, 60)];
         _titleLab.textColor = [UIColor darkGrayColor];
         _titleLab.numberOfLines = 0;
-        _titleLab.font = HNFont(15);
+        _titleLab.font = HNFont(14);
         [self addSubview:_titleLab];
     }
     return self;

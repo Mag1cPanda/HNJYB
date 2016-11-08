@@ -6,10 +6,10 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "PublicViewController.h"
+#import "CaseBaseViewController.h"
 
-@interface MoreCarViewController : PublicViewController
-@property (nonatomic, copy) NSString *appcaseno;
-@property (nonatomic, strong) NSArray *qualifiedArr;
-@property (nonatomic, strong) NSArray *unQualifiedArr;
+@interface MoreCarViewController : CaseBaseViewController
+
+//@property (nonatomic, copy) NSString *appcaseno;
+
 @end

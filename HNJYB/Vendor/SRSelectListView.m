@@ -52,7 +52,7 @@
     
 //    self.icon = [[UIImageView alloc] initWithFrame:CGRectMake(SRWidth-25, SRHeight/2-2.5, 10, 5)];
     self.icon = [[UIImageView alloc] init];
-    self.icon.frame = CGRectMake(_contentLab.frame.origin.x+_contentLab.frame.size.width, self.frame.size.height/2-2.5, 10, 5);
+    self.icon.frame = CGRectMake(_contentLab.maxX+2, self.frame.size.height/2-2.5, 10, 5);
     if (!self.iconName) {
         self.iconName = @"mark1";
     }

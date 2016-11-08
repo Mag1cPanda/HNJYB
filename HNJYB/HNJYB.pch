@@ -27,24 +27,25 @@
 #import "UIImageView+WebCache.h"
 
 
-#ifdef DEBUG
-#define NSLog(...) NSLog(__VA_ARGS__)
-#define debugMethod() NSLog(@"%s", __func__)
-#else
-#define NSLog(...)
-#define debugMethod()
-#endif 
+//#ifdef DEBUG
+//#define NSLog(...) NSLog(__VA_ARGS__)
+//#define debugMethod() NSLog(@"%s", __func__)
+//#else
+//#define NSLog(...)
+//#define debugMethod()
+//#endif 
+
+#ifndef __OPTIMIZE__
+#define NSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
+#endif
+
 
 //外网
-#define HNServiceURL @"http://220.231.252.128/restservices/kckphnapprest"
+//#define HNServiceURL @"http://220.231.252.128/restservices/kckphnapprest"
 
 //骚年
-//#define HNServiceURL @"http://192.168.3.243:86/KCKP/restservices/kckphnapprest"
+#define HNServiceURL @"http://192.168.3.243:86/KCKP/restservices/kckphnapprest"
 
-//肖勇
-//#define HNServiceURL @"http://192.168.3.91:86/KCKP/restservices/kckphnapprest"
-
-//#define HNServiceURL @"http://192.168.3.145:86/KCKP/restservices/kckphnapprest"
 
 #define UserType [Globle getInstance].userType
 
@@ -73,7 +74,7 @@
 #define HNFont(x) [UIFont systemFontOfSize:x]
 
 //版本信息
-#define VersionCode @"3"
+#define VersionCode @"12"
 
 //提示
 #define SHOWALERT(m) \
@@ -89,4 +90,6 @@ UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:
 #define HNNotifacationCenter [NSNotificationCenter defaultCenter]
 
 static NSString *kCaseSubmit = @"kCaseSubmit";
+static NSString *kOneCarRetakePhoto = @"kOneCarRetakePhoto";
+static NSString *kMoreCarRetakePhoto = @"kMoreCarRetakePhoto";
 

@@ -6,50 +6,56 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "XJTipsViewController.h"
 #import "OneSGSCViewController.h"
-#import "XZQXViewController.h"
+#import "XJTipsViewController.h"
+//#import "XZQXViewController.h"
+#import "AccidentHeader.h"
+#import "XJSGXTViewController.h"
 
 @interface XJTipsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *tipLab;
+@property (weak, nonatomic) IBOutlet UIView *header;
 
 @end
 
 @implementation XJTipsViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"事故审核";
+    self.title = @"温馨提示";
     self.tipLab.text = @"您的现场拍照信息已经通过审核！\n请快速将车辆移至不影响交通的安全地点！\n引起交通拥堵可能会受到处罚！";
+    self.backBtn.hidden = YES;
+
+    AccidentHeader *header = [[AccidentHeader alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
+    header.topLab.text = @"请您将车辆快速移至";
+    header.topLab.layer.cornerRadius = 0;
+    header.topLab.layer.borderColor = nil;
+    header.topLab.layer.borderWidth = 0;
+    header.topLab.font = HNFont(15);
+    header.bottemLab.text = @"不影响交通安全的地点";
+    [self.header addSubview:header];
 }
 
-- (IBAction)carMoved:(id)sender {
-    if (GlobleInstance.isOneCar) {
+- (void)backAction
+{
+}
+
+- (IBAction)carMoved:(id)sender
+{
+    if (GlobleInstance.isOneCar)
+    {
         OneSGSCViewController *vc = [OneSGSCViewController new];
         [self.navigationController pushViewController:vc animated:YES];
     }
-    
-    else {
-        XZQXViewController *vc = [XZQXViewController new];
+
+    else
+    {
+        XJSGXTViewController *vc = [XJSGXTViewController new];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

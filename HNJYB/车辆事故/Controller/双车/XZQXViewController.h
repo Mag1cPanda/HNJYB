@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Mag1cPanda. All rights reserved.
 //
 
-#import "PublicViewController.h"
+#import "CaseBaseViewController.h"
 
-@interface XZQXViewController : PublicViewController
-@property (nonatomic, copy) NSString *appcaseno;
+@interface XZQXViewController : CaseBaseViewController
+//@property (nonatomic, copy) NSString *appcaseno;
 @property (nonatomic, assign) BOOL isHistoryPush;
 @end
